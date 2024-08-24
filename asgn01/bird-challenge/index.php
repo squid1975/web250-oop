@@ -12,8 +12,11 @@ class Bird {
   }
 
   function canFly($string2) {
-    
+
   }
 }
+
+$bird1 = new Bird;
+$bird2 = new Bird;
 
 ?>
