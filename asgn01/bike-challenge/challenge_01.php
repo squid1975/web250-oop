@@ -46,8 +46,8 @@ echo "Bike 1 Weight (approx. lbs): " . round($bicycle1->weight_lbs()) . "<br>";
 echo "Bike 2 Weight (kg): ". $bicycle2->weight_kg ."<br>";
 echo "Bike 2 Weight (approx. lbs): ". round($bicycle2->weight_lbs()) . "<br>";
 
-$bicycle1->set_weight_lbs(2);
-$bicycle2->set_weight_lbs(4);
+$bicycle1->set_weight_lbs(15);
+$bicycle2->set_weight_lbs(50);
 echo $bicycle1->weight_kg . "<br>";
 echo $bicycle2->weight_kg . "<br>";
 ?>
