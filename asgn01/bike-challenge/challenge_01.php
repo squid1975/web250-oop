@@ -37,14 +37,14 @@ $bicycle2->year = '2024';
 $bicycle2->description ='Fat tire electric bicycle';
 $bicycle2->weight_kg = 25;
 
-echo $bicycle1->name() . "<br>";
-echo $bicycle2->name() . "<br>";
+echo "Bike 1 Name: " . $bicycle1->name() . "<br>";
+echo "Bike 2 Name: " . $bicycle2->name() . "<br>";
 
-echo $bicycle1->weight_kg . "<br>";
-echo $bicycle1->weight_lbs() . "<br>";
+echo "Bike 1 Weight (kg): " . $bicycle1->weight_kg . "<br>";
+echo "Bike 1 Weight (approx. lbs): " . round($bicycle1->weight_lbs()) . "<br>";
 
-echo $bicycle2->weight_kg . "<br>";
-echo $bicycle2->weight_lbs() . "<br>";
+echo "Bike 2 Weight (kg): ". $bicycle2->weight_kg ."<br>";
+echo "Bike 2 Weight (approx. lbs): ". round($bicycle2->weight_lbs()) . "<br>";
 
 $bicycle1->set_weight_lbs(2);
 $bicycle2->set_weight_lbs(4);
