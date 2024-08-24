@@ -8,7 +8,7 @@ class Bicycle {
 
   //take brand, model, and year. Put into simple string to output combination name for the bicycle
   function name(){
-    return $this->brand . " " . $this->model . " { " . $this->year ."}"; 
+    return $this->brand . " " . $this->model . " " . $this->year .""; 
   }
 
   // convert kilograms to pounds
@@ -22,15 +22,32 @@ class Bicycle {
 
 }
 
+// create instances
+$bicycle1 = new Bicycle;
 $bicycle1->brand = 'Mongoose';
 $bicycle1->model = 'Tervane';
 $bicycle1->year = '2024';
 $bicycle1->description ='Lightweight mountain bike';
 $bicycle1->weight_kg = 5;
 
+$bicycle2 = new Bicycle;
 $bicycle2->brand = 'Aventon';
 $bicycle2->model = 'Aventure';
 $bicycle2->year = '2024';
 $bicycle2->description ='Fat tire electric bicycle';
 $bicycle2->weight_kg = 25;
+
+echo $bicycle1->name() . "<br>";
+echo $bicycle2->name() . "<br>";
+
+echo $bicycle1->weight_kg . "<br>";
+echo $bicycle1->weight_lbs() . "<br>";
+
+echo $bicycle2->weight_kg . "<br>";
+echo $bicycle2->weight_lbs() . "<br>";
+
+$bicycle1->set_weight_lbs(2);
+$bicycle2->set_weight_lbs(4);
+echo $bicycle1->weight_kg . "<br>";
+echo $bicycle2->weight_kg . "<br>";
 ?>
