@@ -13,7 +13,7 @@ class Bird {
   }
 
   function canFly($flighted) {
-    if ($flighted === 'true'){
+    if ($flighted === true){
       echo "This bird can fly." . "<br>";
     } else {
       echo "This bird cannot fly." . "<br>";
