@@ -6,6 +6,7 @@ class Device {
   var $screenHeight;
   var $operatingSystem;
   var $brand;
+  var $name;
 
   function screenArea(){
     return "The screen area in inches is ' . round($this->screenLength * $this->screenHeight).' ." ;
@@ -14,11 +15,10 @@ class Device {
 
 class Phone extends Device {
   var $portable = true;
-  var $cellNumber;
-  var $usesCellularNetwork;
+  var $cellNetwork;
 
-  function makeCall(){
-    return "
+  function networkAvailability(){
+    return "This device is a a mobile phone, so it can be used on a cell network like ' . $this->cellNetwork. '<br>";
   }
 
 }
@@ -39,6 +39,14 @@ class Desktop extends Device {
 
 class Laptop extends Device {
   var $portable = true;
-  var $builtInWebcam;
+  var $hasTrackPad = true;
+  var $weightLbs;
 
+  function describeWeight(){
+    if ($this->weightLbs < 5) {
+      return "This is a lightweight laptop.";
+    } else {
+      return "This is a heavier laptop.";
+    }
+  }
 }
