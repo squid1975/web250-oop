@@ -8,12 +8,14 @@ class Device {
   var $brand;
 
   function describe(){
-    return "The screen area in inches is ' . round($this->screenLength * $this->screenHeight).' . The operating system for the device is ' . $this->operatingSystem . ' and the brand is ' . $this->brand . '<br>" ;
-    if($portable === true) {
-      return "This device is able to be carried anywhere.";
+    $screenArea = round($this->screenLength * $this->screenHeight);
+    $description = "The screen area is $screenArea inches. The operating system for the device is  $this->operatingSystem and the brand is  $this->brand.<br>" ;
+    if($this->portable === true) {
+    $description .= "This device is able to be carried anywhere.";
     } else {
-      return "This is a stationary device.";
+    $description .= "This is a stationary device.";
     }
+    return $description;
   }
 }
 
@@ -69,7 +71,7 @@ $hpDesktop->monitor = 'LCD Monitor';
 $hpDesktop->keyboard = 'Basic keyboard';
 $hpDesktop->mouse = 'Basic mouse';
 $hpDesktop->cpu = 'Intel 2.13 Processor';
-$hpDesktop->describe();
+echo $hpDesktop->describe();
 /// Laptops
 
 /// Phones
