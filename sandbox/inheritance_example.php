@@ -34,7 +34,7 @@ class Pant extends Clothing {
 
 class Jean extends Pant {
   public $material = 'denim';
-  public $outfitType = 'casual';
+  public $type = 'casual';
 }
 
 class Skirt extends Pant {
