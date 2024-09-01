@@ -6,10 +6,14 @@ class Device {
   var $screenHeight;
   var $operatingSystem;
   var $brand;
-  var $name;
 
-  function screenArea(){
-    return "The screen area in inches is ' . round($this->screenLength * $this->screenHeight).' ." ;
+  function describe(){
+    return "The screen area in inches is ' . round($this->screenLength * $this->screenHeight).' . The operating system for the device is ' . $this->operatingSystem . ' and the brand is ' . $this->brand . '<br>" ;
+    if($portable === true) {
+      return "This device is able to be carried anywhere.";
+    } else {
+      return "This is a stationary device.";
+    }
   }
 }
 
@@ -17,8 +21,8 @@ class Phone extends Device {
   var $portable = true;
   var $cellNetwork;
 
-  function networkAvailability(){
-    return "This device is a a mobile phone, so it can be used on a cell network like ' . $this->cellNetwork. '<br>";
+  function describe(){
+    return  parent::describe() .  "This device is a a mobile phone, so it can be used on a cell network like ' . $this->cellNetwork. '<br>";
   }
 
 }
@@ -27,14 +31,16 @@ class Desktop extends Device {
   var $monitor;
   var $keyboard;
   var $mouse;
-  var $tower;
-  function setup() {
-    return "This is the setup: <br>
+  var $cpu;
+
+   function describe()
+   {
+       return parent::describe() . " This is the desktop setup: <br>
             $this->monitor .<br>
             $this->keyboard . <br>
             $this->mouse . <br>
-            $this->tower. <br>";
-  }
+            $this->cpu. <br>";
+   }
 }
 
 class Laptop extends Device {
@@ -42,11 +48,28 @@ class Laptop extends Device {
   var $hasTrackPad = true;
   var $weightLbs;
 
-  function describeWeight(){
+  function describe(){
     if ($this->weightLbs < 5) {
-      return "This is a lightweight laptop.";
+      return  parent::describe() ."  This is a lightweight laptop at ' .  $this->weightLbs . 'lbs , so it is easier to carry.";
     } else {
-      return "This is a heavier laptop.";
+      return parent::describe() ."This is a heavier laptop at ' .  $this->weightLbs . 'lbs , so you may need a laptop bag.";
     }
   }
 }
+
+/////////////////// Create instances 
+
+/// Desktops 
+$hpDesktop = new Desktop;
+$hpDesktop->screenLength = 19;
+$hpDesktop->screenHeight = 19;
+$hpDesktop->operatingSystem = 'Windows';
+$hpDesktop->brand = 'HP';
+$hpDesktop->monitor = 'LCD Monitor';
+$hpDesktop->keyboard = 'Basic keyboard';
+$hpDesktop->mouse = 'Basic mouse';
+$hpDesktop->cpu = 'Intel 2.13 Processor';
+$hpDesktop->describe();
+/// Laptops
+
+/// Phones
