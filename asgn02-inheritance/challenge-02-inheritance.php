@@ -3,12 +3,12 @@
 class Device {
   var $portable = false;
   var $screenLength;
-  var $screenHeight;
+  var $screenWidth;
   var $operatingSystem;
   var $brand;
 
   function describe(){
-    $screenArea = round($this->screenLength * $this->screenHeight);
+    $screenArea = round($this->screenLength * $this->screenWidth);
     $description = "The total screen area is $screenArea inches. The operating system for the device is  $this->operatingSystem and the brand is  $this->brand.<br>" ;
     if($this->portable === true) {
     $description .= "This device is able to be carried anywhere.";
@@ -64,14 +64,17 @@ echo "<h1>Devices</h1>";
 /// Desktops 
 $hpDesktop = new Desktop;
 $hpDesktop->screenLength = 19;
-$hpDesktop->screenHeight = 19;
+$hpDesktop->screenWidth = 19;
 $hpDesktop->operatingSystem = 'Windows';
 $hpDesktop->brand = 'HP';
 $hpDesktop->monitor = 'LCD';
 $hpDesktop->keyboard = 'Basic black';
 $hpDesktop->mouse = 'Basic black';
 $hpDesktop->tower = 'Intel 2.13';
-echo "<h2>Desktop</h2>";
+
+
+echo "<h2>Desktops</h2>";
+
 echo "<h3> $hpDesktop->brand desktop </h3>";
 echo $hpDesktop->describe();
 
@@ -79,12 +82,16 @@ echo $hpDesktop->describe();
 /// Laptops
 $acerLaptop = new Laptop;
 $acerLaptop->screenLength = 15.6;
-$acerLaptop->screenHeight = 8;
+$acerLaptop->screenWidth = 8;
 $acerLaptop->operatingSystem = 'Windows';
 $acerLaptop->brand = 'Acer';
 $acerLaptop->carryWeightLbs = 4.28;
-echo "<br>";
-echo "<h2>Laptop</h2>";
+
+echo "<h2>Laptops</h2>";
+
 echo "<h3> $acerLaptop->brand laptop </h3>";
 echo $acerLaptop->describe();
 /// Phones
+$galaxyS23 = new Phone;
+$galaxyS23->screenLength = 6.5;
+$galaxys23->screenWidth
