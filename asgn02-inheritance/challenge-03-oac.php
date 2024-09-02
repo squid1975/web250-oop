@@ -14,6 +14,7 @@ class Bicycle {
   }
 
   public function wheel_details() {
+    // $wheel_string = $this-wheels == 1 ? "1 wheel" : "{$this->wheels} wheels"; return "It has " . $wheel_string .".";
     if($this->wheels == 1){
       return "It only has one wheel.";
     } else {
@@ -21,49 +22,48 @@ class Bicycle {
     }
   }
 
-  public function weight_lbs() {
-    $weightLbs = floatval($this->weight_kg) * 2.2046226218;
-    return $weightLbs .'lbs';
-  }
-
   public function set_weight_kg($value) {
     $this->weight_kg = floatval($value);
   }
-
-  public function get_weight_kg(){
+  
+  public function weight_kg(){
     return $this->weight_kg . 'kg';
   }
-
+  
   public function set_weight_lbs($value) {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
+
+  
+  public function weight_lbs() {
+    $weight_lbs = $this->weight_kg * 2.2046226218;
+    return $weight_lbs . ' lbs';
+  }
+  
 }
 
 class Unicycle extends Bicycle {
-  protected $wheels = 1;
-}
+    protected $wheels = 1;
+  }
 
 $trek = new Bicycle;
 $trek->brand = 'Trek';
 $trek->model = 'Emonda';
 $trek->year = '2017';
-$trek->weight_kg = 1.0;
 
-$cd = new Bicycle;
-$cd->brand = 'Cannondale';
-$cd->model = 'Synapse';
-$cd->year = '2016';
-$cd->weight_kg = 8.0;
+$uni = new Unicycle;
 
-echo $trek->name() . "<br />";
-echo $cd->name() . "<br />";
+echo "Bicycle: " . $trek->wheel_details() . "<br>";
+echo "Unicycle: " . $uni->wheel_details() . "<br>";
 
-echo $trek->weight_kg . "<br />";
-echo $trek->weight_lbs() . "<br />";
-// notice that one is property, one is a method
+echo "Set weight using kg<br>";
+$trek->set_weight_kg(1);
+echo $trek->weight_kg() . "<br>";
+echo $trek->weight_lbs() . "<br>";
 
+echo "Set weight using lbs<br>";
 $trek->set_weight_lbs(2);
-echo $trek->weight_kg . "<br />";
-echo $trek->weight_lbs() . "<br />";
+echo $trek->weight_kg() . "<br>";
+echo $trek->weight_lbs() . "<br>";
 
 ?>
