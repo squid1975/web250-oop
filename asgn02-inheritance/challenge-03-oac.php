@@ -19,7 +19,10 @@ class Bicycle {
   public function set_weight_lbs($value) {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
+}
 
+class Unicycle extends Bicycle {
+  var $wheels;
 }
 
 $trek = new Bicycle;
