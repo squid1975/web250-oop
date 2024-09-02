@@ -73,7 +73,19 @@ class Desktop extends Device {
 
 class Laptop extends Device {
   public $portable = true;
-  public $carryWeightLbs;
+  private $carryWeightLbs;
+
+  public function setCarryWeightLbs($value){
+    if($value <= 0){
+      return "Weight cannot be negative or zero.";
+    } else {
+      $this->carryWeightLbs = $value;
+    }
+  }
+  public function carryWeightLbs(){
+    return $this->carryWeightLbs;
+  }
+
 
   public function describe(){
     if ($this->carryWeightLbs < 5) {
