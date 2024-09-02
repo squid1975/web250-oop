@@ -19,7 +19,20 @@ class Device {
   public function getScreenLength(){
     return $this->screenLength;
   }
+
+  public function setScreenWidth($value){
+    if($value <= 0){
+      return "Screen width cannot be negative or zero.";
+    } else {
+      $this->screenWidth = $value;
+    }
+  }
+
+    public function getScreenWidth(){
+      return $this->screenWidth;
+    }
   
+
   public function describe(){
     $screenArea = round($this->screenLength * $this->screenWidth);
     $description = "The total screen area is $screenArea inches. The operating system for the device is  $this->operatingSystem and the brand model is the $this->brand $this->model.<br>" ;
