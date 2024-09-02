@@ -89,8 +89,8 @@ class Laptop extends Device {
 
 /// Desktops 
 $hpDesktop = new Desktop;
-$hpDesktop->screenLength = 19;
-$hpDesktop->screenWidth = 19;
+$hpDesktop->setScreenLength(19);
+$hpDesktop->setScreenWidth(19);
 $hpDesktop->operatingSystem = 'Windows';
 $hpDesktop->brand = 'HP';
 $hpDesktop->model = 'Elitedesk';
@@ -101,8 +101,8 @@ $hpDesktop->tower = 'Intel 2.13';
 
 /// Laptops
 $acerLaptop = new Laptop;
-$acerLaptop->screenLength = 15.6;
-$acerLaptop->screenWidth = 8;
+$acerLaptop->setScreenLength(15.6);
+$acerLaptop->setScreenWidth(8);
 $acerLaptop->operatingSystem = 'Windows';
 $acerLaptop->brand = 'Acer';
 $acerLaptop->model = 'Aspire';
@@ -110,8 +110,8 @@ $acerLaptop->carryWeightLbs = 4.28;
 
 /// Phone
 $galaxyS23Ultra = new Phone;
-$galaxyS23Ultra->screenLength = 6.5;
-$galaxyS23Ultra->screenWidth = 3;
+$galaxyS23Ultra->setScreenLength(6.5);
+$galaxyS23Ultra->setScreenWidth(3);
 $galaxyS23Ultra->operatingSystem = 'Android';
 $galaxyS23Ultra->brand = 'Samsung';
 $galaxyS23Ultra->model = 'Galaxy S23 Ultra';
