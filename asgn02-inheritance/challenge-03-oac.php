@@ -13,6 +13,14 @@ class Bicycle {
     return $this->brand . " " . $this->model . " (" . $this->year . ")";
   }
 
+  public function wheel_details() {
+    if($this->wheels == 1){
+      return "It only has one wheel.";
+    } else {
+      return "It has $this->wheels wheels.";
+    }
+  }
+
   public function weight_lbs() {
     return floatval($this->weight_kg) * 2.2046226218;
   }
