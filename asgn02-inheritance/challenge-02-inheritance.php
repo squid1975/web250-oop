@@ -9,7 +9,7 @@ class Device {
 
   function describe(){
     $screenArea = round($this->screenLength * $this->screenHeight);
-    $description = "The screen area is $screenArea inches. The operating system for the device is  $this->operatingSystem and the brand is  $this->brand.<br>" ;
+    $description = "The total screen area is $screenArea inches. The operating system for the device is  $this->operatingSystem and the brand is  $this->brand.<br>" ;
     if($this->portable === true) {
     $description .= "This device is able to be carried anywhere.";
     } else {
@@ -51,15 +51,16 @@ class Laptop extends Device {
 
   function describe(){
     if ($this->carryWeightLbs < 5) {
-      return  parent::describe() ."  This is a lightweight laptop at ' .  $this->carryWeightLbs . 'lbs , so it is easier to carry.";
+      return  parent::describe() ."  This is a lightweight laptop at  $this->carryWeightLbs lbs , so it is easier to carry.";
     } else {
-      return parent::describe() ."This is a heavier laptop at ' .  $this->carryWeightLbs . 'lbs , so you may need a laptop bag.";
+      return parent::describe() ."This is a heavier laptop at  $this->carryWeightLbs lbs , so you may need a laptop bag.";
     }
   }
 }
 
 /////////////////// Create instances 
 
+echo "<h1>Devices</h1>";
 /// Desktops 
 $hpDesktop = new Desktop;
 $hpDesktop->screenLength = 19;
@@ -70,6 +71,8 @@ $hpDesktop->monitor = 'LCD';
 $hpDesktop->keyboard = 'Basic black';
 $hpDesktop->mouse = 'Basic black';
 $hpDesktop->tower = 'Intel 2.13';
+echo "<h2>Desktop</h2>";
+echo "<h3> $hpDesktop->brand desktop </h3>";
 echo $hpDesktop->describe();
 
 
@@ -80,5 +83,8 @@ $acerLaptop->screenHeight = 8;
 $acerLaptop->operatingSystem = 'Windows';
 $acerLaptop->brand = 'Acer';
 $acerLaptop->carryWeightLbs = 4.28;
-
+echo "<br>";
+echo "<h2>Laptop</h2>";
+echo "<h3> $acerLaptop->brand laptop </h3>";
+echo $acerLaptop->describe();
 /// Phones
