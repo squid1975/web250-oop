@@ -25,7 +25,7 @@ class Phone extends Device {
   var $cellNetwork;
 
   function describe(){
-    return  parent::describe() .  "This device is a a mobile phone, so it can be used on a cell network like ' . $this->cellNetwork. '<br>";
+    return  parent::describe() .  "This device is a a mobile phone, so it can be used on a cell network like  $this->cellNetwork. <br>";
   }
 
 }
@@ -61,7 +61,7 @@ class Laptop extends Device {
 
 /////////////////// Create instances 
 
-echo "<h1>Devices</h1>";
+
 /// Desktops 
 $hpDesktop = new Desktop;
 $hpDesktop->screenLength = 19;
@@ -74,13 +74,6 @@ $hpDesktop->keyboard = 'Basic black';
 $hpDesktop->mouse = 'Basic black';
 $hpDesktop->tower = 'Intel 2.13';
 
-
-echo "<h2>Desktops</h2>";
-
-echo "<h3> $hpDesktop->brand desktop </h3>";
-echo $hpDesktop->describe();
-
-
 /// Laptops
 $acerLaptop = new Laptop;
 $acerLaptop->screenLength = 15.6;
@@ -90,14 +83,27 @@ $acerLaptop->brand = 'Acer';
 $acerLaptop->model = 'Aspire';
 $acerLaptop->carryWeightLbs = 4.28;
 
+/// Phone
+$galaxyS23Ultra = new Phone;
+$galaxyS23Ultra->screenLength = 6.5;
+$galaxyS23Ultra->screenWidth = 3;
+$galaxyS23Ultra->operatingSystem = 'Android';
+$galaxyS23Ultra->brand = 'Samsung';
+$galaxyS23Ultra->model = 'Galaxy S23 Ultra';
+$galaxyS23Ultra->cellNetwork = 'Verizon';
+
+// Output
+echo "<h1>Devices</h1>";
+
+echo "<h2>Desktops</h2>";
+
+echo "<h3> $hpDesktop->brand desktop </h3>";
+echo $hpDesktop->describe();
+
 echo "<h2>Laptops</h2>";
 
 echo "<h3> $acerLaptop->brand laptop </h3>";
 echo $acerLaptop->describe();
 
-/// Phones
-$galaxyS23Ultra = new Phone;
-$galaxyS23Ultra->screenLength = 6.5;
-$galaxyS23Ultra->screenWidth = 3;
-$galaxyS23Ultra->operatingSystem = 'Android';
-$galaxyS23Ultra->brand = 'Samsung Galaxy';
+echo "<h3> $galaxyS23Ultra->brand phone</h3>";
+echo $galaxyS23Ultra->describe();
