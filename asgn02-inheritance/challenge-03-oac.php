@@ -66,4 +66,8 @@ $trek->set_weight_lbs(2);
 echo $trek->weight_kg() . "<br>";
 echo $trek->weight_lbs() . "<br>";
 
+echo "Set weight for Unicycle<br>";
+$uni->set_weight_kg(1);
+echo $uni->weight_kg() . "<br>";
+echo $uni->weight_lbs() . "<br>";
 ?>
