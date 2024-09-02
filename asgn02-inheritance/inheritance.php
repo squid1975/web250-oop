@@ -11,7 +11,7 @@ class Device {
 
   public function setScreenLength($value){
     if($value <= 0){
-      return "Screen length cannot be negative or zero.";
+      return "Screen length is undefined.";
     } else {
       $this->screenLength = $value;
     }
@@ -22,7 +22,7 @@ class Device {
 
   public function setScreenWidth($value){
     if($value <= 0){
-      return "Screen width cannot be negative or zero.";
+      return "Screen width is undefined.";
     } else {
       $this->screenWidth = $value;
     }
@@ -77,7 +77,7 @@ class Laptop extends Device {
 
   public function setCarryWeightLbs($value){
     if($value <= 0){
-      return "Weight cannot be negative or zero.";
+      return "Weight is undefined.";
     } else {
       $this->carryWeightLbs = $value;
     }
@@ -89,7 +89,7 @@ class Laptop extends Device {
 
   public function describe(){
     if ($this->carryWeightLbs < 5) {
-      return  parent::describe() ."  This is a lightweight laptop at  $this->carryWeightLbs lbs , so it is easier to carry.";
+      return  parent::describe() ."  This is a lightweight laptop at  $this->carryWeightLbs lbs, so it is easier to carry.";
     } else {
       return parent::describe() ."This is a heavier laptop at  $this->carryWeightLbs lbs , so you may need a laptop bag.";
     }
@@ -118,7 +118,7 @@ $acerLaptop->setScreenWidth(8);
 $acerLaptop->operatingSystem = 'Windows';
 $acerLaptop->brand = 'Acer';
 $acerLaptop->model = 'Aspire';
-$acerLaptop->carryWeightLbs = 4.28;
+$acerLaptop->setCarryWeightLbs(4.28);
 
 /// Phone
 $galaxyS23Ultra = new Phone;
