@@ -16,7 +16,7 @@ class Device {
       $this->screenLength = $value;
     }
   }
-  public function getScreenLength(){
+  public function screenLength(){
     return $this->screenLength;
   }
 
@@ -28,7 +28,7 @@ class Device {
     }
   }
 
-    public function getScreenWidth(){
+    public function screenWidth(){
       return $this->screenWidth;
     }
   
