@@ -10,7 +10,7 @@ class Bicycle {
   public $year;
   public $category; //each instance will have its own category
   public $description = 'Used bicycle';
-  private $weight_kg = 0.0;
+  private $weightKg = 0.0;
   protected static $wheels = 2;
 
   public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
@@ -26,27 +26,27 @@ class Bicycle {
     return $this->brand . " " . $this->model . " (" . $this->year . ")";
   }
 
-  public function wheel_details() {
-    $wheel_string = static::$wheels == 1 ? "1 Wheel" : static::$wheels . "wheels";
-    return "It has " . $wheel_string . ".";
+  public function wheelDetails() {
+    $wheelString = static::$wheels == 1 ? "1 Wheel" : static::$wheels . "wheels";
+    return "It has " . $wheelString . ".";
   }
 
-  public function set_weight_kg($value) {
-    $this->weight_kg = floatval($value);
+  public function setWeightKg($value) {
+    $this->weightKg = floatval($value);
   }
   
-  public function weight_kg(){
-    return $this->weight_kg . 'kg';
+  public function weightKg(){
+    return $this->weightKg . 'kg';
   }
   
-  public function set_weight_lbs($value) {
-    $this->weight_kg = floatval($value) / 2.2046226218;
+  public function setWeightLbs($value) {
+    $this->weightKg = floatval($value) / 2.2046226218;
   }
 
   
-  public function weight_lbs() {
-    $weight_lbs = $this->weight_kg * 2.2046226218;
-    return $weight_lbs . ' lbs';
+  public function weightLbs() {
+    $weightLbs = $this->weightKg * 2.2046226218;
+    return $weightLbs . ' lbs';
   }
   
 }
@@ -75,26 +75,26 @@ $trek->category = Bicycle::CATEGORIES[0];  // assign value at index 0 to $trek i
 echo 'Category: ' . $trek->category . '<br>';
 
 echo "<hr>";
-echo "Bicycle: " . $trek->wheel_details() . "<br>";
-echo "Unicycle: " . $uni->wheel_details() . "<br>";
+echo "Bicycle: " . $trek->wheelDetails() . "<br>";
+echo "Unicycle: " . $uni->wheelDetails() . "<br>";
 echo "<hr>";
 
 echo "Bicycle Set weight using kg<br>";
-$trek->set_weight_kg(1);
-echo $trek->weight_kg() . "<br>";
-echo $trek->weight_lbs() . "<br>";
+$trek->setWeightKg(1);
+echo $trek->weightKg() . "<br>";
+echo $trek->weightLbs() . "<br>";
 echo "<hr>";
 
 echo "Bicycle set weight using lbs<br>";
-$trek->set_weight_lbs(2);
-echo $trek->weight_kg() . "<br>";
-echo $trek->weight_lbs() . "<br>";
+$trek->setWeightLbs(2);
+echo $trek->weightKg() . "<br>";
+echo $trek->weightLbs() . "<br>";
 echo "<hr>";
 
 echo "Set weight for Unicycle<br>";
-$uni->set_weight_kg(1);
-echo $uni->weight_kg() . "<br>";
-echo $uni->weight_lbs() . "<br>";
+$uni->setWeightKg(1);
+echo $uni->weightKg() . "<br>";
+echo $uni->weightLbs() . "<br>";
 
 
 ?>
