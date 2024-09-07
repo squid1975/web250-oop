@@ -12,6 +12,13 @@ class Bicycle {
   private $weight_kg = 0.0;
   protected $wheels = 2;
 
+  public static function create(){
+    $className = get_called_class();
+    $newInstance = new $className;
+    self::$instanceCount++;
+    return $newInstance;
+  }
+
   public function name() {
     return $this->brand . " " . $this->model . " (" . $this->year . ")";
   }
