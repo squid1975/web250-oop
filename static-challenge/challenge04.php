@@ -12,6 +12,8 @@ class Bicycle {
   private $weight_kg = 0.0;
   protected $wheels = 2;
 
+  public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
+
   public static function create(){
     $className = get_called_class();
     $newInstance = new $className;
@@ -61,7 +63,14 @@ $trek->brand = 'Trek';
 $trek->model = 'Emonda';
 $trek->year = '2017';
 
-$uni = new Unicycle;
+echo 'Bicycle count: ' . Bicycle::$instanceCount . '<br>';
+echo 'Unicycle count: ' . Unicycle::$instanceCount . '<br>';
+
+$bike = Bicycle::create();
+$uni = Unicycle::create();
+
+echo 'Bicycle count: ' . Bicycle::$instanceCount . '<br>';
+echo 'Unicycle count: ' . Unicycle::$instanceCount . '<br>';
 
 echo "Bicycle: " . $trek->wheel_details() . "<br>";
 echo "Unicycle: " . $uni->wheel_details() . "<br>";
