@@ -11,7 +11,7 @@ class Bicycle {
   public $category; //each instance will have its own category
   public $description = 'Used bicycle';
   private $weight_kg = 0.0;
-  protected $wheels = 2;
+  protected static $wheels = 2;
 
   public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
 
@@ -27,12 +27,8 @@ class Bicycle {
   }
 
   public function wheel_details() {
-    // $wheel_string = $this-wheels == 1 ? "1 wheel" : "{$this->wheels} wheels"; return "It has " . $wheel_string .".";
-    if($this->wheels == 1){
-      return "It only has one wheel.";
-    } else {
-      return "It has $this->wheels wheels.";
-    }
+    $wheel_string = static::$wheels == 1 ? "1 Wheel" : static::$wheels . "wheels";
+    return "It has " . $wheel_string . ".";
   }
 
   public function set_weight_kg($value) {
@@ -56,7 +52,7 @@ class Bicycle {
 }
 
 class Unicycle extends Bicycle {
-    protected $wheels = 1;
+    protected static $wheels = 1;
   }
 
 $trek = new Bicycle;
