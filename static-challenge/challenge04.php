@@ -8,6 +8,7 @@ class Bicycle {
   public $brand;
   public $model;
   public $year;
+  public $category; //each instance will have its own category
   public $description = 'Used bicycle';
   private $weight_kg = 0.0;
   protected $wheels = 2;
@@ -72,6 +73,12 @@ $uni = Unicycle::create();
 echo 'Bicycle count: ' . Bicycle::$instanceCount . '<br>';
 echo 'Unicycle count: ' . Unicycle::$instanceCount . '<br>';
 
+echo"<hr>";
+echo 'Categories: ' . implode(',', Bicycle::CATEGORIES) . '<br>';
+$trek->category = Bicycle::CATEGORIES[0];  // assign value at index 0 to $trek instance 'category'
+echo 'Category: ' . $trek->category . '<br>';
+
+echo "<hr>";
 echo "Bicycle: " . $trek->wheel_details() . "<br>";
 echo "Unicycle: " . $uni->wheel_details() . "<br>";
 echo "<hr>";
