@@ -1,14 +1,14 @@
 <?php
 
 class Bird {
-    var $habitat;
-    var $food;
-    var $nesting = "tree";
-    var $conservation;
-    var $song = "chirp";
-    var $flying = "yes";
+    public $habitat;
+    public $food;
+    public $nesting = "tree";
+    public $conservation;
+    public $song = "chirp";
+    public $flying = "yes";
 
-    function can_fly() {
+    public function can_fly() {
         if ( $this->flying == "yes" ) {
             $flying_string = "can fly";
         } else {
@@ -19,13 +19,13 @@ class Bird {
 }
 
 class YellowBelliedFlyCatcher extends Bird {
-    var $name = "yellow-bellied flycatcher";
-    var $diet = "mostly insects.";
-    var $song = "flat chilk";
+    public $name = "yellow-bellied flycatcher";
+    public $diet = "mostly insects.";
+    public $song = "flat chilk";
 }
 
 class Kiwi extends Bird {
-    var $name = "kiwi";
-    var $diet = "omnivorous";
-    var $flying = "no";
+    public $name = "kiwi";
+    public $diet = "omnivorous";
+    public $flying = "no";
 }
