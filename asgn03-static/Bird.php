@@ -37,3 +37,4 @@ class Kiwi extends Bird {
     public $diet = "omnivorous";
     public $flightAbility = false;
 }
+
