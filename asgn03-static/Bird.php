@@ -13,7 +13,10 @@ class Bird {
     protected static $eggNum = 0;
 
     public static function create(){
-
+      $birdClassName = get_called_class();
+      $newInstance = new $birdClassName;
+      self::$instanceCount++;
+      return $newInstance;
     }
 
     public function returnFlightAbility() {
