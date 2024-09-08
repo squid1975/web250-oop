@@ -13,11 +13,7 @@ class Bird {
     protected static $eggNum = 0;
 
     public function returnFlightAbility() {
-        if ($this->flightAbility) {
-            $flightedString = "can fly";
-        } else {
-            $flightedString = "is stuck on the ground";
-        }
+        $flightedString = static::$flightAbility == true ? "can fly" : static::$flightAbility . "is stuck on the ground";
         return  $flightedString ;
     }
 }
