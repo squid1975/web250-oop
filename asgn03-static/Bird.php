@@ -1,20 +1,21 @@
 <?php
 
 class Bird {
+    public $name;
     public $habitat;
     public $food;
     public $nesting = "tree";
     public $conservation;
     public $song = "chirp";
-    public $flying = "yes";
+    public $flightAbility = true;
 
-    public function can_fly() {
-        if ( $this->flying == "yes" ) {
-            $flying_string = "can fly";
+    public function returnFlightAbility() {
+        if ($this->flightAbility) {
+            $flightedString = "can fly";
         } else {
-            $flying_string = "is stuck on the ground";
+            $flightedString = "is stuck on the ground";
         }
-        return  $flying_string ;
+        return  $flightedString ;
     }
 }
 
@@ -27,5 +28,5 @@ class YellowBelliedFlyCatcher extends Bird {
 class Kiwi extends Bird {
     public $name = "kiwi";
     public $diet = "omnivorous";
-    public $flying = "no";
+    public $flight = "no";
 }
