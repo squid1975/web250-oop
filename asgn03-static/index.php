@@ -28,17 +28,22 @@
 <h2>Static Examples</h2>
   <h3>Before using the create method</h3>
     <?php
-    echo 'Bird Count:' . Bird::$instanceCount . '<br>';
-    echo 'Flycatcher Count:' . YellowBelliedFlyCatcher::$instanceCount . '<br>';
-    echo 'Kiwi Count:' . Kiwi::$instanceCount . '<br>';
+    echo 'Bird Count: ' . Bird::$instanceCount . '<br>';
+    echo 'Flycatcher Count: ' . YellowBelliedFlyCatcher::$instanceCount . '<br>';
+    echo 'Kiwi Count: ' . Kiwi::$instanceCount . '<br>';
 
 
     ?>
     <h3>After using the create method</h3>
     <?php
-    echo "Bird Count:" . "<br>";
-    echo "Flycatcher Count:" . "<br>";
-    echo "Kiwi Count:" . "<br>";
+
+    $bird = Bird::create();
+    $flyCatcher = YellowBelliedFlyCatcher::create();
+    $kiwi = Kiwi::create();
+
+    echo 'Bird Count: ' . Bird::$instanceCount . '<br>';
+    echo 'Flycatcher Count: ' . YellowBelliedFlyCatcher::$instanceCount . '<br>';
+    echo 'Kiwi Count: ' . Kiwi::$instanceCount . '<br>';
 
     ?>
     
