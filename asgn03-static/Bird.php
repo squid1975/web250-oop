@@ -10,6 +10,7 @@ class Bird {
     public $flightAbility = true;
 
     protected static $instanceCount = 0;
+    protected static $eggNum = 0;
 
     public function returnFlightAbility() {
         if ($this->flightAbility) {
