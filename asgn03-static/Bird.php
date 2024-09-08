@@ -28,5 +28,5 @@ class YellowBelliedFlyCatcher extends Bird {
 class Kiwi extends Bird {
     public $name = "kiwi";
     public $diet = "omnivorous";
-    public $flight = "no";
+    public $flightAbility = false;
 }
