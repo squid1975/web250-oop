@@ -9,7 +9,7 @@ class Bird {
     public $song = "chirp";
     public $flightAbility = true;
 
-    protected static $instanceCount = 0;
+    public static $instanceCount = 0;
     protected static $eggNum = 0;
 
     public static function create(){
