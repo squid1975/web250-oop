@@ -6,23 +6,30 @@
     <title>asgn02 Inheritance</title>
 </head>
 <body>
+  <hr>
 <h1>Inheritance Examples</h1>
 
-<?php 
-    include 'Bird.php';
-    
-    $bird = new Bird;
-    echo '<p>The generic song of any bird is "' . $bird->song . '".</p>';
+    <?php 
+        include 'Bird.php';
+        
+        $bird = new Bird;
+        echo '<p>The generic song of any bird is "' . $bird->song . '".</p>';
 
-    $fly_catcher = new YellowBelliedFlyCatcher;
-    echo '<p>The song of the ' . $fly_catcher->name . ' on breeding grounds is "' . $fly_catcher->song . '".</p>';
+        $flyCatcher = new YellowBelliedFlyCatcher;
+        echo '<p>The song of the ' . $flyCatcher->name . ' on breeding grounds is "' . $flyCatcher->song . '".</p>';
 
-    $kiwi = new Kiwi;
-    $kiwi->flightAbility = false;
-    echo "<p>The " . $fly_catcher->name . " " . $fly_catcher->returnFlightAbility() . ".</p>";
-    echo "<p>The " . $kiwi->name . " " . $kiwi->returnFlightAbility() . ".</p>";    
+        $kiwi = new Kiwi;
+        $kiwi->flightAbility = false;
+        echo "<p>The " . $flyCatcher->name . " " . $flyCatcher->returnFlightAbility() . ".</p>";
+        echo "<p>The " . $kiwi->name . " " . $kiwi->returnFlightAbility() . ".</p>";    
+    ?>
+<hr>
+<h2>Static Examples</h2>
+  <h3>Before using the create method</h3>
 
-?>
+
+  <h3>After using the create method</h3>
+
     </body>
 </html>
 

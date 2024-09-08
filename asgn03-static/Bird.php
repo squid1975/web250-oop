@@ -3,7 +3,7 @@
 class Bird {
     public $name;
     public $habitat;
-    public $food;
+    public $diet;
     public $nesting = "tree";
     public $conservation;
     public $song = "chirp";
