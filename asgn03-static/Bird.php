@@ -9,6 +9,8 @@ class Bird {
     public $song = "chirp";
     public $flightAbility = true;
 
+    protected static $instanceCount = 0;
+
     public function returnFlightAbility() {
         if ($this->flightAbility) {
             $flightedString = "can fly";
