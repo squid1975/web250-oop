@@ -10,4 +10,7 @@ class Bird {
   }
 }
 
+$robin = new Bird('Robin', 'Turdus migratorius');
+
+
 ?>
