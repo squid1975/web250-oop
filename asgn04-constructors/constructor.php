@@ -11,6 +11,6 @@ class Bird {
 }
 
 $robin = new Bird('Robin', 'Turdus migratorius');
-
+$easternTowhee = new Bird ('Eastern Towhee', 'Pipilo erythrophthalmus');
 
 ?>
