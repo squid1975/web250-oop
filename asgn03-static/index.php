@@ -7,6 +7,11 @@
 </head>
 <body>
   <hr>
+  <nav>
+    <ul>
+      <li><a href="bird.php">Bird php file</a></li>
+    </ul>
+  </nav>
 <h1>Inheritance Examples</h1>
 
     <?php 
