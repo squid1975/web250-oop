@@ -6,7 +6,7 @@
 
   <body>
     <header>
-      <h1>Web 250 OOP: Home Directory</h1>
+      <h1>Asgn04 Constructors</h1>
       <nav role="navigation">
         <ul>
           <li><a href="homepagebutnot.php">Homepage (but not actually the homepage)</a></li>
