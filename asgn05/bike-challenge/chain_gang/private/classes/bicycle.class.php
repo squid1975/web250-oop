@@ -23,6 +23,20 @@ class Bicycle {
     5 => 'Like New'
   ];
 
+  public function __construct($arguments=[]){
+    $this->brand = $arguments['brand'] ?? '';
+    $this->model = $arguments['model'] ?? '';
+    $this->year = $arguments['year'] ?? '';
+    $this->category = $arguments['category'] ?? '';
+    $this->color = $arguments['color'] ?? '';
+    $this->description = $arguments['description'] ?? '';
+    $this->gender = $arguments['gender'] ?? '';
+    $this->price = $arguments['price'] ?? 0;
+    $this->weightKg = $arguments['weightKg'] ?? 0.0;
+    $this->conditionID = $arguments['conditionID'] ?? 3;
+
+  }
+
 }
 
 
