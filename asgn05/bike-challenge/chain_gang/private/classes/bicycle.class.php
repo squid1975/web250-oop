@@ -53,6 +53,13 @@ class Bicycle {
     $this->weightKg = floatval($value) / 2.2046226218;
   }
 
+  public function condition() {
+    if($this->conditionID > 0) {
+      return self::CONDITION_OPTIONS[$this->conditionID];
+    } else {
+      return "Unknown";
+    }
+  }
 
 }
 
