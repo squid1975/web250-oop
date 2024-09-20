@@ -65,8 +65,6 @@ class ParseCSV {
     $this->data = [];
     $this->rowCount = 0;
   }
-
-
 }
 
 ?>
