@@ -45,7 +45,7 @@ class ParseCSV {
      	  $this->header = $row;
       } else {
         $this->data[] = array_combine($this->header, $row);
-        $this->row_count++;
+        $this->rowCount++;
      	}
     }
     fclose($file);
