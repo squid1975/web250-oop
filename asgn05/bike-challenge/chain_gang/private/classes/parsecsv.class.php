@@ -1,35 +1,34 @@
-<?php 
+<?php
 
 class ParseCSV {
 
   public static $delimiter = ',';
 
-  private $fileName;
+  private $filename;
   private $header;
   private $data=[];
-  private $rowCount = 0;
+  private $row_count = 0;
 
-  public function __construct($fileName='') {
-    if($fileName != ''){
-      $this->validateFile($fileName);
+  public function __construct($filename='') {
+    if($filename != '') {
+      $this->file($filename);
     }
   }
 
-  public function validateFile($fileName) {
-    if(!file_exists($fileName)) {
-      echo "This file does not exist.";
+  public function file($filename) {
+    if(!file_exists($filename)) {
+      echo "File does not exist.";
+      return false;
+    } elseif(!is_readable($filename)) {
+      echo "File is not readable.";
       return false;
     }
-    elseif(!is_readable($fileName)) {
-      echo "The file is not readable.";
-      return false;
-    }
-    $this->fileName = $fileName;
+    $this->filename = $filename;
     return true;
   }
 
   public function parse() {
-    if(!isset($this->fileName)) {
+    if(!isset($this->filename)) {
       echo "File not set.";
       return false;
     }
@@ -37,7 +36,7 @@ class ParseCSV {
     // clear any previous results
     $this->reset();
 
-    $file = fopen($this->fileName, 'r');
+    $file = fopen($this->filename, 'r');
     while(!feof($file)) {
       $row = fgetcsv($file, 0, self::$delimiter);
       if($row == [NULL] || $row === FALSE) { continue; }
@@ -45,7 +44,7 @@ class ParseCSV {
      	  $this->header = $row;
       } else {
         $this->data[] = array_combine($this->header, $row);
-        $this->rowCount++;
+        $this->row_count++;
      	}
     }
     fclose($file);
@@ -57,14 +56,15 @@ class ParseCSV {
   }
 
   public function row_count() {
-    return $this->rowCount;
+    return $this->row_count;
   }
 
   private function reset() {
     $this->header = NULL;
     $this->data = [];
-    $this->rowCount = 0;
+    $this->row_count = 0;
   }
+
 }
 
 ?>

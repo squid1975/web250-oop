@@ -10,11 +10,13 @@ class Bicycle {
   public $description;
   public $gender;
   public $price;
-  protected $weightKg;
-  protected $conditionID;
+  protected $weight_kg;
+  protected $condition_id;
 
   public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
+
   public const GENDERS = ['Mens', 'Womens', 'Unisex'];
+
   protected const CONDITION_OPTIONS = [
     1 => 'Beat up',
     2 => 'Decent',
@@ -23,45 +25,52 @@ class Bicycle {
     5 => 'Like New'
   ];
 
-  public function __construct($arguments=[]){
-    $this->brand = $arguments['brand'] ?? '';
-    $this->model = $arguments['model'] ?? '';
-    $this->year = $arguments['year'] ?? '';
-    $this->category = $arguments['category'] ?? '';
-    $this->color = $arguments['color'] ?? '';
-    $this->description = $arguments['description'] ?? '';
-    $this->gender = $arguments['gender'] ?? '';
-    $this->price = $arguments['price'] ?? 0;
-    $this->weightKg = $arguments['weightKg'] ?? 0.0;
-    $this->conditionID = $arguments['conditionID'] ?? 3;
+  public function __construct($args=[]) {
+    //$this->brand = isset($args['brand']) ? $args['brand'] : '';
+    $this->brand = $args['brand'] ?? '';
+    $this->model = $args['model'] ?? '';
+    $this->year = $args['year'] ?? '';
+    $this->category = $args['category'] ?? '';
+    $this->color = $args['color'] ?? '';
+    $this->description = $args['description'] ?? '';
+    $this->gender = $args['gender'] ?? '';
+    $this->price = $args['price'] ?? 0;
+    $this->weight_kg = $args['weight_kg'] ?? 0.0;
+    $this->condition_id = $args['condition_id'] ?? 3;
+
+    // Caution: allows private/protected properties to be set
+    // foreach($args as $k => $v) {
+    //   if(property_exists($this, $k)) {
+    //     $this->$k = $v;
+    //   }
+    // }
   }
 
   public function weight_kg() {
-    return number_format($this->weightKg, 2) . ' kg';
+    return number_format($this->weight_kg, 2) . ' kg';
   }
 
-  public function set_weight_value($value) {
-    $this->weightKg = floatval($value);
+  public function set_weight_kg($value) {
+    $this->weight_kg = floatval($value);
   }
 
   public function weight_lbs() {
-    $weightLbs = floatval($this->weightKg) * 2.2046226218;
-    return number_format($weightLbs , 2) . ' lbs ';
+    $weight_lbs = floatval($this->weight_kg) * 2.2046226218;
+    return number_format($weight_lbs, 2) . ' lbs';
   }
 
   public function set_weight_lbs($value) {
-    $this->weightKg = floatval($value) / 2.2046226218;
+    $this->weight_kg = floatval($value) / 2.2046226218;
   }
 
   public function condition() {
-    if($this->conditionID > 0) {
-      return self::CONDITION_OPTIONS[$this->conditionID];
+    if($this->condition_id > 0) {
+      return self::CONDITION_OPTIONS[$this->condition_id];
     } else {
       return "Unknown";
     }
   }
 
 }
-
 
 ?>
