@@ -34,9 +34,17 @@ class Bicycle {
     $this->price = $arguments['price'] ?? 0;
     $this->weightKg = $arguments['weightKg'] ?? 0.0;
     $this->conditionID = $arguments['conditionID'] ?? 3;
-
   }
 
+  public function weight_kg() {
+    return number_format($this->weightKg, 2) . ' kg';
+  }
+
+  public set_weight_value($value) {
+    $this->weightKg = floatval($value);
+  }
+
+  
 }
 
 
