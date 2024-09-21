@@ -7,12 +7,8 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-/* 
-  Create a table. The header should reflect the headings in the wnc-birds.csv class.
-  Use a table border of 1 to make the display easier to read.
-*/
 
-<table>
+<table border="1">
       <tr>
         <th>Common Name</th>
         <th>Habitat</th>
@@ -35,8 +31,8 @@
         <td><?php echo h($bird->food);?></td>
         <td><?php echo h($bird->nestPlacement);?></td>
         <td><?php echo h($bird->behavior);?></td>
-        <td><?php echo h($bird->backyardTips);?></td>
         <td><?php echo h($bird->conservationID);?></td>
+        <td><?php echo h($bird->backyardTips);?></td>
       </tr>
     <?php } ?>
 
