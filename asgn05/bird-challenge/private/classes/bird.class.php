@@ -1,14 +1,18 @@
 <?php
 
 class Bird {
-
+// common_name|habitat|food|nest_placement|behavior|conservation_id|backyard_tips
 /*
 Use the wnc-birds.csv file to create the properties
 Make all of the properties public.
 */
-
-
- 
+  public $commonName;
+  public $habitat;
+  public $food;
+  public $nestPlacement;
+  public $behavior;
+  public $conservationID;
+  public $backyardTips;
   /*
   Create a protected constant array called CONSERVATION_OPTIONS using the following scale.
   Use the CONDITION_OPTIONS from the bicycle.class.php file
