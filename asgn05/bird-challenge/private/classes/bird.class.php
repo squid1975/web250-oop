@@ -33,7 +33,15 @@ Make all of the properties public.
    - Use the Null coalescing operator
    - Create a default value of 1 for conservation_id
  */
-
+  public function __construct($arguments=[]){
+    $this->commonName = $arguments['commonName'] ?? NULL;
+    $this->habitat = $arguments['habitat'] ?? NULL;
+    $this->food = $arguments['food'] ?? NULL;
+    $this->nestPlacement = $arguments['nestPlacement'] ?? NULL;
+    $this->behavior = $arguments['behavior'] ?? NULL;
+    $this->conservationID = $arguments['conservationID'] ?? 1;
+    $this->backyardTips = $arguments['backyardTips'] ?? NULL;
+  }
 
 
 /*
