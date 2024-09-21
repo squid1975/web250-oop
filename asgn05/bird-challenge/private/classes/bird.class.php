@@ -16,14 +16,17 @@ Make all of the properties public.
   /*
   Create a protected constant array called CONSERVATION_OPTIONS using the following scale.
   Use the CONDITION_OPTIONS from the bicycle.class.php file
-
   1 = Low concern
   2 = Moderate concern
   3 = Extreme concern
   4 = Extinct
   */
-
- 
+  protected const CONSERVATION_OPTIONS = [
+    1 => 'Low concern',
+    2 => 'Moderate concern',
+    3 => 'Extreme concern',
+    4 => 'Extinct'
+  ]; 
 
  /*
    - Create a public __contruct that accepts a list of $args[]
